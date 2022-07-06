@@ -48,7 +48,7 @@ try:
     SLURM_ID = int(sys.argv[1]) 
 except:
     filename =  os.path.basename(sys.argv[0])
-    SLURM_ID = 128#random.randint(0,100)
+    SLURM_ID = 0#random.randint(0,100)
     
 if len(sys.argv)>2:
     nsim = int(sys.argv[2])
@@ -57,7 +57,6 @@ else:
 
 n_different_scenarios = 8 #8
 
-all_vacopts = pickle.load( open( "all_vacopts_1to5phases_and_10phases.p", "rb" ) )
 dummy = SLURM_ID%n_different_scenarios
 homophily_ethnicity = [0.8,0][dummy//4] #,1
 multipler_highcontact_jobs = [3.,1.][(dummy%4)//2]
@@ -750,7 +749,8 @@ def plot_incidence_cases_black_vs_white(vacopt,initial_values,beta,q,midc,expone
 # print(sum(res_from_run[:4]))
 
 if __name__ == '__main__':
-    
+    all_vacopts = pickle.load( open( "all_vacopts_1to5phases_and_10phases.p", "rb" ) )
+
     TIME = time.time()
     dummy = SLURM_ID//n_different_scenarios
     res_from_runs = []
