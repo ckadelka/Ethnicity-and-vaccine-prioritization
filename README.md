@@ -1,6 +1,6 @@
 # Ethnicity-and-vaccine-prioritization
 
-This repository contains all files neeeded to run the COVID-19 vaccine allocation model, described in the recent article xxx.
+This repository contains all files needed to run the COVID-19 vaccine allocation model, described in the recent article xxx.
 
 To run the model for a single choice of parameters and vaccine allocation strategy, run the following:
 ```
